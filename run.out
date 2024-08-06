@@ -1,0 +1,349 @@
+rm -f vecadd01 vecadd00 matmult00 matmult01 vecadd02 vecadd03 conv add_arrays *.o
+/usr/local/cuda/bin/nvcc vecaddKernel01.cu -c -o vecaddKernel01.o -O3
+/usr/local/cuda/bin/nvcc timer.cu -c -o timer.o -O3
+/usr/local/cuda/bin/nvcc vecadd.cu vecaddKernel01.o -o vecadd01 -L/usr/local/cuda/lib64 -L/usr/local/cuda/samples/common/lib/  timer.o -O3
+vecadd.cu: In function 'int main(int, char**)':
+vecadd.cu:95:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+vecadd.cu:105:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+vecadd.cu: In function 'void Cleanup(bool)':
+vecadd.cu:161:24: warning: 'cudaError_t cudaThreadExit()' is deprecated [-Wdeprecated-declarations]
+     error = cudaThreadExit();
+                        ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:931:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadExit(void);
+                                              ^~~~~~~~~~~~~~
+/usr/local/cuda/bin/nvcc vecaddKernel00.cu -c -o vecaddKernel00.o -O3
+/usr/local/cuda/bin/nvcc vecadd.cu vecaddKernel00.o -o vecadd00 -L/usr/local/cuda/lib64 -L/usr/local/cuda/samples/common/lib/  timer.o -O3
+vecadd.cu: In function 'int main(int, char**)':
+vecadd.cu:95:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+vecadd.cu:105:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+vecadd.cu: In function 'void Cleanup(bool)':
+vecadd.cu:161:24: warning: 'cudaError_t cudaThreadExit()' is deprecated [-Wdeprecated-declarations]
+     error = cudaThreadExit();
+                        ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:931:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadExit(void);
+                                              ^~~~~~~~~~~~~~
+/usr/local/cuda/bin/nvcc matmultKernel00.cu -c -o matmultKernel00.o -O3
+/usr/local/cuda/bin/nvcc matmult.cu matmultKernel00.o -o matmult00 -L/usr/local/cuda/lib64 -L/usr/local/cuda/samples/common/lib/  timer.o -O3
+matmult.cu: In function 'void MatMul(Matrix, Matrix, Matrix, int)':
+matmult.cu:48:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+   cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+matmult.cu:59:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+   cudaThreadSynchronize() ;
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+/usr/local/cuda/bin/nvcc matmultKernel01.cu -c -o matmultKernel01.o -O3 -DFOOTPRINT_SIZE=32
+/usr/local/cuda/bin/nvcc matmult.cu matmultKernel01.o -o matmult01 -L/usr/local/cuda/lib64 -L/usr/local/cuda/samples/common/lib/  timer.o -O3 -DFOOTPRINT_SIZE=32
+matmult.cu: In function 'void MatMul(Matrix, Matrix, Matrix, int)':
+matmult.cu:48:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+   cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+matmult.cu:59:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+   cudaThreadSynchronize() ;
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+/usr/local/cuda/bin/nvcc vecaddKernel02.cu -c -o vecaddKernel02.o -O3
+/usr/local/cuda/bin/nvcc vecadd2.cu vecaddKernel02.o -o vecadd02 -L/usr/local/cuda/lib64 -L/usr/local/cuda/samples/common/lib/  timer.o -O3
+vecadd2.cu(31): warning: variable "values_per_thread" was declared but never referenced
+
+vecadd2.cu: In function 'int main(int, char**)':
+vecadd2.cu:58:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+vecadd2.cu:64:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+/usr/local/cuda/bin/nvcc vecadd3.cu vecaddKernel02.o -o vecadd03 -L/usr/local/cuda/lib64 -L/usr/local/cuda/samples/common/lib/  timer.o -O3
+vecadd3.cu(27): warning: variable "values_per_thread" was declared but never referenced
+
+vecadd3.cu: In function 'int main(int, char**)':
+vecadd3.cu:48:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+vecadd3.cu:54:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+/usr/local/cuda/bin/nvcc convKernel.cu -c -o convKernel.o -O3
+/usr/local/cuda/bin/nvcc conv.cu convKernel.o -o conv -lcudnn -L/usr/lib/x86_64-linux-gnu/ -I/usr/include/ -L/usr/local/cuda/lib64 -L/usr/local/cuda/samples/common/lib/  timer.o -O3
+conv.cu: In function 'int main(int, char**)':
+conv.cu:328:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+conv.cu:335:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize() ;
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+conv.cu:348:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+conv.cu:355:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize() ;
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+conv.cu:461:23: warning: 'cudaError_t cudaThreadSynchronize()' is deprecated [-Wdeprecated-declarations]
+     cudaThreadSynchronize();
+                       ^
+/usr/local/cuda/bin/../targets/x86_64-linux/include/cuda_runtime_api.h:957:46: note: declared here
+ extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+                                              ^~~~~~~~~~~~~~~~~~~~~
+g++ add_arrays.cpp -o add_arrays
+ 
+*****  PART A , Problem 1,  QN 1 *****
+Total vector size: 3840000
+Time: 0.000324 (sec), GFlopsS: 11.851455, GBytesS: 142.217460
+Test PASSED 
+Total vector size: 7680000
+Time: 0.000576 (sec), GFlopsS: 13.332887, GBytesS: 159.994643
+Test PASSED 
+Total vector size: 15360000
+Time: 0.001152 (sec), GFlopsS: 13.332887, GBytesS: 159.994643
+Test PASSED 
+ 
+*****  PART A , Problem 1,  QN 2 *****
+Total vector size: 3840000
+Time: 0.000280 (sec), GFlopsS: 13.707342, GBytesS: 164.488109
+Test PASSED 
+Total vector size: 7680000
+Time: 0.000558 (sec), GFlopsS: 13.765921, GBytesS: 165.191050
+Test PASSED 
+Total vector size: 15360000
+Time: 0.001115 (sec), GFlopsS: 13.774751, GBytesS: 165.297009
+Test PASSED 
+ 
+*****  PART A , Problem 2, QN 3 *****
+Data dimensions: 4096x4096 
+Grid Dimensions: 256x256 
+Block Dimensions: 16x16 
+Footprint Dimensions: 16x16 
+Time: 0.043419 (sec), nFlops: 137438953472, GFlopsS: 3165.418821
+Data dimensions: 8192x8192 
+Grid Dimensions: 512x512 
+Block Dimensions: 16x16 
+Footprint Dimensions: 16x16 
+Time: 0.394603 (sec), nFlops: 1099511627776, GFlopsS: 2786.374125
+Data dimensions: 16384x16384 
+Grid Dimensions: 1024x1024 
+Block Dimensions: 16x16 
+Footprint Dimensions: 16x16 
+Time: 3.331294 (sec), nFlops: 8796093022208, GFlopsS: 2640.443472
+ 
+*****  PART A , Problem 2, QN 4 *****
+Data dimensions: 8192x8192 
+Grid Dimensions: 256x256 
+Block Dimensions: 16x16 
+Footprint Dimensions: 32x32 
+Time: 0.334933 (sec), nFlops: 1099511627776, GFlopsS: 3282.780401
+Data dimensions: 16384x16384 
+Grid Dimensions: 512x512 
+Block Dimensions: 16x16 
+Footprint Dimensions: 32x32 
+Time: 2.686706 (sec), nFlops: 8796093022208, GFlopsS: 3273.932021
+Data dimensions: 32768x32768 
+Grid Dimensions: 1024x1024 
+Block Dimensions: 16x16 
+Footprint Dimensions: 32x32 
+Time: 21.977023 (sec), nFlops: 70368744177664, GFlopsS: 3201.923381
+ 
+*****  PART B , QN 1 *****
+Number of arguments: 2
+Arguments:
+argv[0]: ./add_arrays
+argv[1]: 1
+Time taken for K = 1 million elements: 3 milliseconds
+Number of arguments: 2
+Arguments:
+argv[0]: ./add_arrays
+argv[1]: 5
+Time taken for K = 5 million elements: 12 milliseconds
+Number of arguments: 2
+Arguments:
+argv[0]: ./add_arrays
+argv[1]: 10
+Time taken for K = 10 million elements: 25 milliseconds
+Number of arguments: 2
+Arguments:
+argv[0]: ./add_arrays
+argv[1]: 50
+Time taken for K = 50 million elements: 125 milliseconds
+Number of arguments: 2
+Arguments:
+argv[0]: ./add_arrays
+argv[1]: 100
+Time taken for K = 100 million elements: 251 milliseconds
+ 
+*****  PART B , QN 2 *****
+ 
+- 1M elements -
+Total vector size : 1000000
+Time: 0.083840 (sec), GFlopsS: 0.011927, GBytesS: 0.143130
+Test PASSED 
+Total vector size : 1000000
+Time: 0.001620 (sec), GFlopsS: 0.617263, GBytesS: 7.407159
+Test PASSED 
+Total vector size : 1000000
+Time: 0.000023 (sec), GFlopsS: 43.240247, GBytesS: 518.882969
+Test PASSED 
+ 
+- 5M elements -
+Total vector size : 5000000
+Time: 0.399631 (sec), GFlopsS: 0.012512, GBytesS: 0.150138
+Test PASSED 
+Total vector size : 5000000
+Time: 0.007848 (sec), GFlopsS: 0.637103, GBytesS: 7.645236
+Test PASSED 
+Total vector size : 5000000
+Time: 0.000084 (sec), GFlopsS: 59.578182, GBytesS: 714.938182
+Test PASSED 
+ 
+- 10M elements -
+Total vector size : 10000000
+Time: 0.797996 (sec), GFlopsS: 0.012531, GBytesS: 0.150377
+Test PASSED 
+Total vector size : 10000000
+Time: 0.016156 (sec), GFlopsS: 0.618967, GBytesS: 7.427600
+Test PASSED 
+Total vector size : 10000000
+Time: 0.000157 (sec), GFlopsS: 63.743222, GBytesS: 764.918663
+Test PASSED 
+ 
+- 50M elements -
+Total vector size : 50000000
+Time: 3.984217 (sec), GFlopsS: 0.012550, GBytesS: 0.150594
+Test PASSED 
+Total vector size : 50000000
+Time: 0.080444 (sec), GFlopsS: 0.621550, GBytesS: 7.458596
+Test PASSED 
+Total vector size : 50000000
+Time: 0.000760 (sec), GFlopsS: 65.782685, GBytesS: 789.392221
+Test PASSED 
+ 
+- 100M elements -
+Total vector size : 100000000
+Time: 8.015378 (sec), GFlopsS: 0.012476, GBytesS: 0.149712
+Test PASSED 
+Total vector size : 100000000
+Time: 0.164971 (sec), GFlopsS: 0.606167, GBytesS: 7.274001
+Test PASSED 
+Total vector size : 100000000
+Time: 0.001506 (sec), GFlopsS: 66.397087, GBytesS: 796.765047
+Test PASSED 
+ 
+*****  PART B , QN 3 *****
+ 
+- 1M elements -
+Total vector size : 1000000
+Time: 0.080248 (sec), GFlopsS: 0.012461, GBytesS: 0.149536
+Test PASSED 
+Total vector size : 1000000
+Time: 0.001645 (sec), GFlopsS: 0.607958, GBytesS: 7.295499
+Test PASSED 
+Total vector size : 1000000
+Time: 0.000026 (sec), GFlopsS: 38.479853, GBytesS: 461.758239
+Test PASSED 
+ 
+- 5M elements -
+Total vector size : 5000000
+Time: 0.399214 (sec), GFlopsS: 0.012525, GBytesS: 0.150295
+Test PASSED 
+Total vector size : 5000000
+Time: 0.007902 (sec), GFlopsS: 0.632759, GBytesS: 7.593104
+Test PASSED 
+Total vector size : 5000000
+Time: 0.000085 (sec), GFlopsS: 58.743754, GBytesS: 704.925042
+Test PASSED 
+ 
+- 10M elements -
+Total vector size : 10000000
+Time: 0.798003 (sec), GFlopsS: 0.012531, GBytesS: 0.150375
+Test PASSED 
+Total vector size : 10000000
+Time: 0.015766 (sec), GFlopsS: 0.634271, GBytesS: 7.611246
+Test PASSED 
+Total vector size : 10000000
+Time: 0.000160 (sec), GFlopsS: 62.508256, GBytesS: 750.099076
+Test PASSED 
+ 
+- 50M elements -
+Total vector size : 50000000
+Time: 3.985301 (sec), GFlopsS: 0.012546, GBytesS: 0.150553
+Test PASSED 
+Total vector size : 50000000
+Time: 0.081646 (sec), GFlopsS: 0.612400, GBytesS: 7.348802
+Test PASSED 
+Total vector size : 50000000
+Time: 0.000761 (sec), GFlopsS: 65.700251, GBytesS: 788.403008
+Test PASSED 
+ 
+- 100M elements -
+Total vector size : 100000000
+Time: 7.922760 (sec), GFlopsS: 0.012622, GBytesS: 0.151462
+Test PASSED 
+Total vector size : 100000000
+Time: 0.163906 (sec), GFlopsS: 0.610106, GBytesS: 7.321276
+Test PASSED 
+Total vector size : 100000000
+Time: 0.001512 (sec), GFlopsS: 66.135352, GBytesS: 793.624219
+Test PASSED 
+ 
+*****  PART C , QN 1, QN 2, QN 3 *****
+Number of arguments: 1 
+Arguments:
+argv[0]: ./conv
+Checksum: 122756344698240.000000, Time: 5.864143 (milli sec), GFlopsS: 617.972383
+Checksum: 122756344698240.000000, Time: 4.703999 (milli sec), GFlopsS: 770.382602
+Checksum: 121461527119552.000000, Time: 2.189159 (milli sec), GFlopsS: 1655.374509
+true checksum : 122756344698240.000000 ( calculated on cpu ) 

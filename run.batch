@@ -1,0 +1,108 @@
+#!/bin/bash
+
+make clean
+make
+
+echo " "
+echo "*****  PART A , Problem 1,  QN 1 *****"
+./vecadd00 500
+./vecadd00 1000
+./vecadd00 2000
+
+echo " "
+echo "*****  PART A , Problem 1,  QN 2 *****"
+./vecadd01 500
+./vecadd01 1000
+./vecadd01 2000
+
+echo " "
+echo "*****  PART A , Problem 2, QN 3 *****"
+./matmult00 256 
+./matmult00 512 
+./matmult00 1024 
+
+echo " "
+echo "*****  PART A , Problem 2, QN 4 *****"
+./matmult01 256 
+./matmult01 512 
+./matmult01 1024 
+
+echo " "
+echo "*****  PART B , QN 1 *****"
+./add_arrays 1
+./add_arrays 5
+./add_arrays 10
+./add_arrays 50
+./add_arrays 100
+
+echo " "
+echo "*****  PART B , QN 2 *****"
+echo " " 
+echo "- 1M elements -"
+./vecadd02 1 1 1
+./vecadd02 1 1 256
+./vecadd02 1 3907 256
+
+echo " " 
+echo "- 5M elements -"
+./vecadd02 5 1 1
+./vecadd02 5 1 256
+./vecadd02 5 19532 256
+
+echo " " 
+echo "- 10M elements -"
+./vecadd02 10 1 1
+./vecadd02 10 1 256
+./vecadd02 10 39063 256
+
+echo " " 
+echo "- 50M elements -"
+./vecadd02 50 1 1
+./vecadd02 50 1 256
+./vecadd02 50 195313 256
+
+echo " " 
+echo "- 100M elements -"
+./vecadd02 100 1 1
+./vecadd02 100 1 256
+./vecadd02 100 390625 256
+
+echo " "
+echo "*****  PART B , QN 3 *****"
+echo " " 
+echo "- 1M elements -"
+./vecadd03 1 1 1
+./vecadd03 1 1 256
+./vecadd03 1 3907 256
+
+echo " " 
+echo "- 5M elements -"
+./vecadd03 5 1 1
+./vecadd03 5 1 256
+./vecadd03 5 19532 256
+
+echo " " 
+echo "- 10M elements -"
+./vecadd03 10 1 1
+./vecadd03 10 1 256
+./vecadd03 10 39063 256
+
+echo " " 
+echo "- 50M elements -"
+./vecadd03 50 1 1
+./vecadd03 50 1 256
+./vecadd03 50 195313 256
+
+echo " " 
+echo "- 100M elements -"
+./vecadd03 100 1 1
+./vecadd03 100 1 256
+./vecadd03 100 390625 256
+
+echo " "
+echo "*****  PART C , QN 1, QN 2, QN 3 *****"
+./conv
+
+
+
+
