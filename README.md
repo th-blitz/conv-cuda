@@ -1,5 +1,5 @@
 
-# HPML Assignment 4
+# A CNN Algorithm in CUDA 
 ## To run all experiments on HPC please use :
 ```
 sbatch run.sbatch
